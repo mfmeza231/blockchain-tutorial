@@ -22,5 +22,8 @@
   "devDependencies": {
     "i": "^0.3.7",
     "jest": "^27.4.7"
+  },
+  "dependencies": {
+    "hex-to-binary": "^1.0.1"
   }
 }

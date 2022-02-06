@@ -4,9 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --watchAll",
     "test:cov": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "start": "node index.js",
+    "dev": "npm run start-redis && nodemon index.js",
+    "dev-peer": "cross-env GENERATE_PEER_PORT='true' nodemon index.js",
+    "start-redis": "redis-server --daemonize yes"
   },
   "repository": {
     "type": "git",
@@ -20,10 +24,16 @@
   },
   "homepage": "https://github.com/mfmeza231/blockchain-tutorial#readme",
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "i": "^0.3.7",
-    "jest": "^27.4.7"
+    "jest": "^27.4.7",
+    "nodemon": "^2.0.15"
   },
   "dependencies": {
-    "hex-to-binary": "^1.0.1"
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "hex-to-binary": "^1.0.1",
+    "redis": "^2.8.0",
+    "request": "^2.88.0"
   }
 }
